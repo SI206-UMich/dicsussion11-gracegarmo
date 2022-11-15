@@ -43,8 +43,11 @@ def create_patients_table(cur, conn):
     cur.execute("DROP TABLE IF EXISTS Patients")
     cur.execute("CREATE TABLE Patients (pet_id INTEGER PRIMARY KEY, name TEXT, species_id INTEGER, age INTEGER, cuteness INTEGER, agressiveness INTEGER)"
 
+
+
     for i in range(len(species)):
-        cur.excecute("INSERT INTO species (id,title) VALUES (?,?)", (i,species[i]))
+        cur.excecute("INSERT INTO species (pet_id, name, species_id, age, cuteness, agressiveness) VALUES (?,?)", ("0", "Fluffle", "0", "3", "90", "100")
+        conn.commit()
 
 
 # ADD FLUFFLE TO THE TABLE
